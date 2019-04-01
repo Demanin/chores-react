@@ -1,6 +1,6 @@
 
 const loadWheels = (dispatch) => {
-  return fetch(process.env.SERVER + '/api/wheels', {headers: {'Accept': 'application/json'}})
+  return fetch(process.env.REACT_APP_SERVER + '/api/wheels', {headers: {'Accept': 'application/json'}})
     .then(res => res.json())
     .then(
       (result) => {

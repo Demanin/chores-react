@@ -1,7 +1,7 @@
 
 const addChoreWheel = (dispatch) => {
   return fetch(
-      process.env.SERVER + '/api/wheels',
+      process.env.REACT_APP_SERVER + '/api/wheels',
       {
         headers: {
           'Accept': 'application/json',

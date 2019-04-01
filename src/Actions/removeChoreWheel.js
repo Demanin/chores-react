@@ -2,7 +2,7 @@
 const removeChoreWheel = (id) => {
   return (dispatch) => {
     return fetch(
-        process.env.SERVER + '/api/wheels/' + id,
+        process.env.REACT_APP_SERVER + '/api/wheels/' + id,
         {
           headers: {
             'Accept': 'application/json'
