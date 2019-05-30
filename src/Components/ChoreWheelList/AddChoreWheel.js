@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import addChoreWheel from '../../Actions/addChoreWheel';
 import { Button as BsButton } from 'react-bootstrap';
 
 class AddChoreWheel extends Component
@@ -8,11 +6,9 @@ class AddChoreWheel extends Component
   render() {
     return (
       <div>
-        <BsButton bsStyle="success"
-          onClick={() => {
-            this.props.dispatch(addChoreWheel);
-          }
-        }>
+        <BsButton variant="success"
+          onClick={this.props.onClick}
+        >
           Add Chore Wheel
         </BsButton>
         <hr />
@@ -20,7 +16,5 @@ class AddChoreWheel extends Component
     );
   }
 }
-
-AddChoreWheel = connect()(AddChoreWheel);
 
 export default AddChoreWheel;

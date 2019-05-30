@@ -13,6 +13,7 @@ const ChoreWheelList = (state = [], action) => {
           },
           turnList: action.turnList || [],
           isVisible: action.isVisible,
+          priority: action.priority,
           allowAddTurn: false
         }
       ];

@@ -7,7 +7,6 @@ const loadWheels = (dispatch) => {
         result.forEach((wheel) => {
           dispatch({
             type: 'ADD_CHORE_WHEEL',
-            id: wheel._id,
             isEditable: false,
             ...wheel
           });

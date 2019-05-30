@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Well, Row, Col, Button, ButtonGroup, Glyphicon } from 'react-bootstrap';
+import { Card, Row, Col, Button, ButtonGroup } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Turn extends Component
 {
@@ -13,7 +14,7 @@ class Turn extends Component
 
     return (
       <div>
-        <Well bsSize="sm" style={hasNextTurn ? {marginBottom: '0px'} : {}}>
+        <Card body size="sm" style={hasNextTurn ? {marginBottom: '0px'} : {}}>
           <Row>
             <Col xs={6} md={9}>
               <h4 style={{marginTop: '0px', marginBottom: '0px'}}>
@@ -23,30 +24,30 @@ class Turn extends Component
             <Col xs={6} md={3} className="text-right">
               <ButtonGroup>
                 <Button
-                  bsStyle="success"
-                  bsSize="xs"
+                  variant="success"
+                  size="xs"
                   onClick={this.props.onCompleteClick}
                 >
-                  <Glyphicon glyph="check" />
+                  <FontAwesomeIcon icon="check" />
                 </Button>
                 <Button
-                  bsStyle="warning"
-                  bsSize="xs"
+                  variant="warning"
+                  size="xs"
                   onClick={this.props.onSkipClick}
                 >
-                  <Glyphicon glyph="share-alt" />
+                  <FontAwesomeIcon icon="forward" />
                 </Button>
                 <Button
-                  bsStyle="danger"
-                  bsSize="xs"
+                  variant="danger"
+                  size="xs"
                   onClick={this.props.onRemoveClick}
                 >
-                  <Glyphicon glyph="remove" />
+                  <FontAwesomeIcon icon="trash" />
                 </Button>
               </ButtonGroup>
             </Col>
           </Row>
-        </Well>
+        </Card>
         {hasNextTurn &&
           <div className="text-info well-sm">
             {this.props.nextTurn}

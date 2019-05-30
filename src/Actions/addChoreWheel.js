@@ -1,6 +1,7 @@
 
-const addChoreWheel = (dispatch) => {
-  return fetch(
+const addChoreWheel = (ownerId, priority, isVisible) => {
+  return (dispatch) => {
+    return fetch(
       process.env.REACT_APP_SERVER + '/api/wheels',
       {
         headers: {
@@ -8,8 +9,11 @@ const addChoreWheel = (dispatch) => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          'title': '...',
-          'turnList': []
+          title: '...',
+          turnList: [],
+          ownerId,
+          priority,
+          isVisible
         }),
         method: 'POST'
       }
@@ -19,11 +23,8 @@ const addChoreWheel = (dispatch) => {
       (result) => {
         dispatch({
           type: 'ADD_CHORE_WHEEL',
-          id: result._id,
-          title: result.title,
-          turnList: result.turnList,
           isEditable: true,
-          isVisible: true
+          ...result,
         });
       },
       (error) => {
@@ -31,6 +32,7 @@ const addChoreWheel = (dispatch) => {
         dispatch({type: 'HANDLE_LOAD_ERROR'});
       }
     );
+  }
 };
 
 export default addChoreWheel;

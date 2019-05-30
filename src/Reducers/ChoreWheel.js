@@ -30,7 +30,7 @@ const ChoreWheel = (state = [], action) => {
         ...state,
         turnList: [
           ...state.turnList,
-          action.turn
+          { userId: action.turn }
         ],
         allowAddTurn: false
       };

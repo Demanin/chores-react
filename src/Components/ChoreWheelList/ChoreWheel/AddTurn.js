@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Button, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
+import { Button, FormGroup, FormControl } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class AddTurn extends Component
 {
   constructor(props) {
     super(props);
 
-    this.handleChange  = this.handleChange.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
     this.state = {
       value: ''
@@ -15,24 +15,17 @@ class AddTurn extends Component
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  handleKeyDown(event) {
-    if (event.keyCode === 13) {
-      this.props.onSaveClick(this.state.value);
-      event.target.value = '';
-    }
+    this.props.onSaveClick(event.target.value)
   }
 
   render() {
     if (!this.props.choreWheel.allowAddTurn) {
       return (
         <Button
-          bsStyle="success"
+          variant="success"
           onClick={this.props.onEditClick}
         >
-         <Glyphicon glyph="plus" /> Add New Turn
+         <FontAwesomeIcon icon="plus" /> Add New Turn
         </Button>
       );
     }
@@ -41,14 +34,17 @@ class AddTurn extends Component
       <div>
         <FormGroup
           controlId={"turn-adder-" + this.props.id}
-          bsSize="sm"
+          size="sm"
         >
           <FormControl
-            autoFocus
+            as="select"
             onChange={this.handleChange}
-            onKeyDown={this.handleKeyDown}
-            onBlur={() => this.props.onSaveClick(this.state.value)}
-          />
+          >
+            <option key="-1" value="-1">Select a user</option>
+            {this.props.userList.map((user, index) =>
+              <option key="index" value={user.id}>{user.name}</option>
+            )}
+          </FormControl>
         </FormGroup>
       </div>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import ChoreWheel from './ChoreWheelList/ChoreWheel';
 
 class ChoreWheelList extends Component
@@ -11,10 +11,10 @@ class ChoreWheelList extends Component
 
     return (
       <div>
-        <Grid>
-          {this.props.choreWheelList.map(choreWheel =>
+        <Container>
+          {this.props.choreWheelList.map((choreWheel, index) =>
             <ChoreWheel
-              key={choreWheel.id}
+              key={index}
               choreWheel={choreWheel}
               onAddClick={this.props.onAddClick}
               onShowClick={this.props.onShowClick}
@@ -23,7 +23,7 @@ class ChoreWheelList extends Component
               onRemoveTurnClick={this.props.onRemoveTurnClick}
             />
           )}
-        </Grid>
+        </Container>
         <hr />
       </div>
     );

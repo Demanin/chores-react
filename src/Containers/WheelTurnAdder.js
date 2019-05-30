@@ -3,6 +3,12 @@ import AddTurn from '../Components/ChoreWheelList/ChoreWheel/AddTurn';
 import allowAddTurn from '../Actions/allowAddTurn';
 import saveAddTurn from '../Actions/saveAddTurn';
 
+const mapStateToProps = (state, ownProps) => {
+  return {
+    userList: Object.values(state.userList),
+  };
+};
+
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onEditClick: () => {
@@ -15,7 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 };
 
 const WheelTurnAdder = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(AddTurn);
 

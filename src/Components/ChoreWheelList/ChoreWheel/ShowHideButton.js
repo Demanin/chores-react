@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Glyphicon } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class ShowHideButton extends Component
 {
@@ -7,20 +8,20 @@ class ShowHideButton extends Component
     if (this.props.choreWheel.isVisible) {
       return (
         <Button
-          bsStyle="link"
+          variant="link"
           onClick={() => this.props.onHideClick(this.props.choreWheel.id)}
         >
-         <Glyphicon glyph="eye-open" />
+         <FontAwesomeIcon icon="eye" />
         </Button>
       );
     }
 
     return (
       <Button
-        bsStyle="link"
+        variant="link"
         onClick={() => this.props.onShowClick(this.props.choreWheel.id)}
       >
-       <Glyphicon glyph="eye-close" />
+       <FontAwesomeIcon icon="eye-slash" />
       </Button>
     );
   }

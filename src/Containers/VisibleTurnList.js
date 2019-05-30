@@ -9,9 +9,9 @@ import removeTurn from '../Actions/removeTurn';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    turn: getVisibleTurn(ownProps.choreWheel),
-    nextTurn: getNextVisibleTurn(ownProps.choreWheel),
-    thirdTurn: getThirdVisibleTurn(ownProps.choreWheel)
+    turn: getVisibleTurn(ownProps.choreWheel, state.userList),
+    nextTurn: getNextVisibleTurn(ownProps.choreWheel, state.userList),
+    thirdTurn: getThirdVisibleTurn(ownProps.choreWheel, state.userList)
   };
 };
 
