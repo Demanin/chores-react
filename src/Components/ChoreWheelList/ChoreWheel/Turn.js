@@ -16,30 +16,30 @@ class Turn extends Component
       <div>
         <Card body size="sm" style={hasNextTurn ? {marginBottom: '0px'} : {}}>
           <Row>
-            <Col xs={6} md={9}>
+            <Col xs={12} md={9}>
               <h4 style={{marginTop: '0px', marginBottom: '0px'}}>
                 {this.props.turn}
               </h4>
             </Col>
-            <Col xs={6} md={3} className="text-right">
+            <Col xs={12} md={3} className="text-right">
               <ButtonGroup>
                 <Button
                   variant="success"
-                  size="xs"
+                  size="sm"
                   onClick={this.props.onCompleteClick}
                 >
                   <FontAwesomeIcon icon="check" />
                 </Button>
                 <Button
                   variant="warning"
-                  size="xs"
+                  size="sm"
                   onClick={this.props.onSkipClick}
                 >
                   <FontAwesomeIcon icon="forward" />
                 </Button>
                 <Button
                   variant="danger"
-                  size="xs"
+                  size="sm"
                   onClick={this.props.onRemoveClick}
                 >
                   <FontAwesomeIcon icon="trash" />
