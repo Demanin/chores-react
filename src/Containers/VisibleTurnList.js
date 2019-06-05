@@ -1,17 +1,13 @@
 import { connect } from 'react-redux';
 import Turn from '../Components/ChoreWheelList/ChoreWheel/Turn';
-import getVisibleTurn from '../Actions/getVisibleTurn';
-import getNextVisibleTurn from '../Actions/getNextVisibleTurn';
-import getThirdVisibleTurn from '../Actions/getThirdVisibleTurn';
+import getNameList from '../Actions/getNameList';
 import completeTurn from '../Actions/completeTurn';
 import skipTurn from '../Actions/skipTurn';
 import removeTurn from '../Actions/removeTurn';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    turn: getVisibleTurn(ownProps.choreWheel, state.userList),
-    nextTurn: getNextVisibleTurn(ownProps.choreWheel, state.userList),
-    thirdTurn: getThirdVisibleTurn(ownProps.choreWheel, state.userList)
+    turnList: getNameList(ownProps.choreWheel, state.userList),
   };
 };
 

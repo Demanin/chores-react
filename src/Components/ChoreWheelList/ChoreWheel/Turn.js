@@ -5,12 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Turn extends Component
 {
   render() {
-    if (!this.props.turn) {
+    console.log(this.props.turnList, this.props.turnList.length);
+    if (0 >= this.props.turnList.length) {
       return null;
     }
 
-    const hasNextTurn = (!!this.props.nextTurn);
-    const hasThirdTurn = (!!this.props.thirdTurn);
+    const hasNextTurn = (2 <= this.props.turnList.length);
+    const hasFollowingTurns = (3 <= this.props.turnList.length);
 
     return (
       <div>
@@ -18,7 +19,7 @@ class Turn extends Component
           <Row>
             <Col xs={12} md={9}>
               <h4 style={{marginTop: '0px', marginBottom: '0px'}}>
-                {this.props.turn}
+                {this.props.turnList[0]}
               </h4>
             </Col>
             <Col xs={12} md={3} className="text-right">
@@ -50,13 +51,15 @@ class Turn extends Component
         </Card>
         {hasNextTurn &&
           <div className="text-info well-sm">
-            {this.props.nextTurn}
+            {this.props.turnList[1]}
           </div>
         }
-        {hasThirdTurn &&
-          <div className="well-sm" style={{color: '#aaa'}}>
-            {this.props.thirdTurn}
-          </div>
+        {hasFollowingTurns &&
+          this.props.turnList.slice(2).map((turn, index) =>
+            <div className="well-sm" key={index} style={{color: '#aaa'}}>
+              {turn}
+            </div>
+          )
         }
       </div>
     );

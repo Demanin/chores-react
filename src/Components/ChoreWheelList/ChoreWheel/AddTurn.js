@@ -42,7 +42,7 @@ class AddTurn extends Component
           >
             <option key="-1" value="-1">Select a user</option>
             {this.props.userList.map((user, index) =>
-              <option key="index" value={user.id}>{user.name}</option>
+              <option key={index} value={user.id}>{user.name}</option>
             )}
           </FormControl>
         </FormGroup>
