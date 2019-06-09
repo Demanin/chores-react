@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Turn extends Component
 {
   render() {
-    console.log(this.props.turnList, this.props.turnList.length);
     if (0 >= this.props.turnList.length) {
       return null;
     }

@@ -32,4 +32,6 @@ render();
 store.dispatch(loadUsers);
 store.dispatch(loadWheels);
 
+setInterval(() => store.dispatch(loadWheels), 60*1000);
+
 registerServiceWorker();

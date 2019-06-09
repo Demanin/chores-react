@@ -4,6 +4,10 @@ const loadWheels = (dispatch) => {
     .then(res => res.json())
     .then(
       (result) => {
+        dispatch({
+          type: 'RESET_WHEELS'
+        });
+
         result.forEach((wheel) => {
           dispatch({
             type: 'ADD_CHORE_WHEEL',
