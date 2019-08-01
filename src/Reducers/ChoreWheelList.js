@@ -14,8 +14,8 @@ const ChoreWheelList = (state = [], action) => {
           turnList: action.turnList || [],
           isVisible: action.isVisible,
           priority: action.priority,
-          allowAddTurn: false
-        }
+          allowAddTurn: false,
+        },
       ];
     case 'REMOVE_CHORE_WHEEL':
       return state.filter(choreWheel => {

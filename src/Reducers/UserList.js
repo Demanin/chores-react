@@ -7,7 +7,7 @@ const UserList = (state = [], action) => {
         [action.id]: {
           id: action.id,
           name: action.name,
-        }
+        },
       };
     default:
       return state;
