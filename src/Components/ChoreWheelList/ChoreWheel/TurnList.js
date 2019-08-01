@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Turn from './Turn';
 
 class TurnList extends Component
@@ -21,5 +22,11 @@ class TurnList extends Component
     );
   }
 }
+
+TurnList.propTypes = {
+  turnList: PropTypes.arrayOf(PropTypes.string),
+  onClick: PropTypes.func,
+  choreWheelId: PropTypes.number,
+};
 
 export default TurnList;

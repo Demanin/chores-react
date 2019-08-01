@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button as BsButton } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 class Button extends Component
 {
@@ -14,5 +15,11 @@ class Button extends Component
     );
   }
 }
+
+Button.propTypes = {
+  active: PropTypes.bool,
+  onClick: PropTypes.func,
+  children: PropTypes.string,
+};
 
 export default Button;

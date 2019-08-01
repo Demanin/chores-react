@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Button, FormGroup, FormControl } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +11,7 @@ class AddTurn extends Component
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
-      value: ''
+      value: '',
     };
   }
 
@@ -25,7 +26,7 @@ class AddTurn extends Component
           variant="success"
           onClick={this.props.onEditClick}
         >
-         <FontAwesomeIcon icon="plus" /> Add New Turn
+          <FontAwesomeIcon icon="plus" /> Add New Turn
         </Button>
       );
     }
@@ -50,5 +51,18 @@ class AddTurn extends Component
     );
   }
 }
+
+AddTurn.propTypes = {
+  choreWheel: PropTypes.shape({ allowAddTurn: PropTypes.bool }),
+  onSaveClick: PropTypes.func.isRequired,
+  onEditClick: PropTypes.func.isRequired,
+  userList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+    })
+  ).isRequired,
+  id: PropTypes.number,
+};
 
 export default AddTurn;

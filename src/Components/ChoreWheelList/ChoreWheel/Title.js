@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import TitleForm from './TitleForm';
 
 class Title extends Component
@@ -24,5 +25,15 @@ class Title extends Component
     );
   }
 }
+
+Title.propTypes = {
+  title: PropTypes.shape({
+    isEditable: PropTypes.bool,
+    text: PropTypes.string,
+  }),
+  onEditClick: PropTypes.func,
+  onSaveClick: PropTypes.func,
+  id: PropTypes.number,
+};
 
 export default Title;

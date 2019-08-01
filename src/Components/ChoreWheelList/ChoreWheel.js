@@ -1,10 +1,11 @@
+import { Button, Card, Col, Row } from 'react-bootstrap';
 import React, { Component } from 'react';
-import VisibleTurnList from '../../Containers/VisibleTurnList';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 import ShowHideButton from './ChoreWheel/ShowHideButton';
+import VisibleTurnList from '../../Containers/VisibleTurnList';
 import WheelHeader from '../../Containers/WheelHeader';
 import WheelTurnAdder from '../../Containers/WheelTurnAdder';
-import { Card, Button, Row, Col } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class ChoreWheel extends Component
 {
@@ -21,24 +22,24 @@ class ChoreWheel extends Component
       {
         headers:{
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           turnList,
           title: title.text,
           isVisible,
-          priority
+          priority,
         }),
-        method: 'POST'
+        method: 'POST',
       }
     )
-    .then(res => res.json())
-    .then(
-      (result) => {},
-      (error) => {
-        console.log(error);
-      }
-    );
+      .then(res => res.json())
+      .then(
+        (result) => {},
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 
   render() {
@@ -86,5 +87,23 @@ class ChoreWheel extends Component
     );
   }
 }
+
+ChoreWheel.propTypes = {
+  choreWheel: PropTypes.shape({
+    id: PropTypes.number,
+    turnList: PropTypes.arrayOf(
+      PropTypes.shape({ userId: PropTypes.number })
+    ),
+    title: PropTypes.shape({
+      text: PropTypes.string,
+      isEditable: PropTypes.bool,
+    }),
+    isVisible: PropTypes.bool,
+    priority: PropTypes.number,
+  }),
+  onShowClick: PropTypes.func,
+  onHideClick: PropTypes.func,
+  onRemoveWheelClick: PropTypes.click,
+};
 
 export default ChoreWheel;

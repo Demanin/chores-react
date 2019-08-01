@@ -1,6 +1,7 @@
+import { Button, ButtonGroup, Card, Col, Row } from 'react-bootstrap';
 import React, { Component } from 'react';
-import { Card, Row, Col, Button, ButtonGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 
 class Turn extends Component
 {
@@ -63,6 +64,13 @@ class Turn extends Component
       </div>
     );
   }
+}
+
+Turn.propTypes = {
+  turnList: PropTypes.arrayOf(PropType.string),
+  onRemoveClick: PropTypes.func,
+  onSkipClick: PropTypes.func,
+  onCompleteClick: PropTypes.func,
 }
 
 export default Turn;

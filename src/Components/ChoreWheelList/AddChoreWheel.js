@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button as BsButton } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 class AddChoreWheel extends Component
 {
@@ -16,5 +17,9 @@ class AddChoreWheel extends Component
     );
   }
 }
+
+AddChoreWheel.propTypes = {
+  onClick: PropTypes.func,
+};
 
 export default AddChoreWheel;

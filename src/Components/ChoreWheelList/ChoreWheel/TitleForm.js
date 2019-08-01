@@ -1,5 +1,6 @@
+import { FormControl, FormGroup } from 'react-bootstrap';
 import React, { Component } from 'react';
-import { FormGroup, FormControl } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 class TitleForm extends Component
 {
@@ -10,7 +11,7 @@ class TitleForm extends Component
     this.handleKeyDown = this.handleKeyDown.bind(this);
 
     this.state = {
-      value: props.title
+      value: props.title,
     };
   }
 
@@ -40,5 +41,11 @@ class TitleForm extends Component
     );
   }
 }
+
+TitleForm.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  onSave: PropTypes.func,
+};
 
 export default TitleForm;

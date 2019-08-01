@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Container } from 'react-bootstrap';
 import ChoreWheel from './ChoreWheelList/ChoreWheel';
+import { Container } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 class ChoreWheelList extends Component
 {
@@ -29,5 +30,25 @@ class ChoreWheelList extends Component
     );
   }
 }
+
+ChoreWheelList.propTypes = {
+  choreWheelList: PropTypes.arrayOf({
+    id: PropTypes.number,
+    turnList: PropTypes.arrayOf(
+      PropTypes.shape({ userId: PropTypes.number })
+    ),
+    title: PropTypes.shape({
+      text: PropTypes.string,
+      isEditable: PropTypes.bool,
+    }),
+    isVisible: PropTypes.bool,
+    priority: PropTypes.number,
+  }),
+  onAddClick: PropTypes.func,
+  onShowClick: PropTypes.func,
+  onHideClick: PropTypes.func,
+  onRemoveWheelClick: PropTypes.func,
+  onRemoveTurnClick: PropTypes.func,
+};
 
 export default ChoreWheelList;
