@@ -7,7 +7,7 @@ const loadUsers = (dispatch) => {
         result.forEach((user) => {
           dispatch({
             type: 'ADD_USER',
-            ...user
+            ...user,
           });
         });
       },

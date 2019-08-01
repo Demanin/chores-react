@@ -5,14 +5,14 @@ const loadWheels = (dispatch) => {
     .then(
       (result) => {
         dispatch({
-          type: 'RESET_WHEELS'
+          type: 'RESET_WHEELS',
         });
 
         result.forEach((wheel) => {
           dispatch({
             type: 'ADD_CHORE_WHEEL',
             isEditable: false,
-            ...wheel
+            ...wheel,
           });
         });
       },

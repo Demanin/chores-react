@@ -2,7 +2,7 @@
 const hideChoreWheel = (id) => {
   return {
     type: 'HIDE_CHORE_WHEEL',
-    id
+    id,
   };
 };
 

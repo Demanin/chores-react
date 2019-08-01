@@ -6,32 +6,32 @@ const addChoreWheel = (ownerId, priority, isVisible) => {
       {
         headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           title: '...',
           turnList: [],
           ownerId,
           priority,
-          isVisible
+          isVisible,
         }),
-        method: 'POST'
+        method: 'POST',
       }
     )
-    .then(res => res.json())
-    .then(
-      (result) => {
-        dispatch({
-          type: 'ADD_CHORE_WHEEL',
-          isEditable: true,
-          ...result,
-        });
-      },
-      (error) => {
-        console.log(error);
-        dispatch({type: 'HANDLE_LOAD_ERROR'});
-      }
-    );
+      .then(res => res.json())
+      .then(
+        (result) => {
+          dispatch({
+            type: 'ADD_CHORE_WHEEL',
+            isEditable: true,
+            ...result,
+          });
+        },
+        (error) => {
+          console.log(error);
+          dispatch({type: 'HANDLE_LOAD_ERROR'});
+        }
+      );
   }
 };
 

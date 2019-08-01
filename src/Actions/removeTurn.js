@@ -2,7 +2,7 @@
 const removeTurn = (id) => {
   return {
     type: 'REMOVE_TURN',
-    id
+    id,
   };
 };
 

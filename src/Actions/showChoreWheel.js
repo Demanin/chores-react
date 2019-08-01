@@ -2,7 +2,7 @@
 const showChoreWheel = (id) => {
   return {
     type: 'SHOW_CHORE_WHEEL',
-    id
+    id,
   };
 };
 

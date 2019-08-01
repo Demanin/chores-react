@@ -2,19 +2,19 @@
 const removeChoreWheel = (id) => {
   return (dispatch) => {
     return fetch(
-        process.env.REACT_APP_SERVER + '/api/wheels/' + id,
-        {
-          headers: {
-            'Accept': 'application/json'
-          },
-          method: 'DELETE'
-        }
-      )
+      process.env.REACT_APP_SERVER + '/api/wheels/' + id,
+      {
+        headers: {
+          'Accept': 'application/json',
+        },
+        method: 'DELETE',
+      }
+    )
       .then(
         (result) => {
           dispatch({
             type: 'REMOVE_CHORE_WHEEL',
-            id
+            id,
           });
         },
         (error) => {

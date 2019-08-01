@@ -4,7 +4,7 @@ const addTurn = (choreWheel, turn) => {
     type: 'ADD_TURN',
     id: choreWheel.id,
     turn,
-    index: choreWheel.turnList.length
+    index: choreWheel.turnList.length,
   };
 }
 
