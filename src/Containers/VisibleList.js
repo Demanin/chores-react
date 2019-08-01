@@ -1,14 +1,14 @@
-import { connect } from 'react-redux';
 import ChoreWheelList from '../Components/ChoreWheelList';
+import { connect } from 'react-redux';
 import getVisibleChoreWheels from '../Actions/getVisibleChoreWheels';
-import showChoreWheel from '../Actions/showChoreWheel';
 import hideChoreWheel from '../Actions/hideChoreWheel';
 import removeChoreWheel from '../Actions/removeChoreWheel';
 import removeTurn from '../Actions/removeTurn';
+import showChoreWheel from '../Actions/showChoreWheel';
 
 const mapStateToProps = (state) => {
   return {
-    choreWheelList: getVisibleChoreWheels(state.choreWheelList, state.visibilityFilter)
+    choreWheelList: getVisibleChoreWheels(state.choreWheelList, state.visibilityFilter),
   };
 };
 
@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     onRemoveTurnClick: (id, index) => {
       dispatch(removeTurn(id, index))
-    }
+    },
   };
 };
 

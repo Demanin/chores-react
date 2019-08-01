@@ -1,5 +1,5 @@
-import { connect } from 'react-redux';
 import Title from '../Components/ChoreWheelList/ChoreWheel/Title';
+import { connect } from 'react-redux';
 import editWheelTitle from '../Actions/editWheelTitle';
 import saveWheelTitle from '../Actions/saveWheelTitle';
 
@@ -10,7 +10,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     onSaveClick: (title) => {
       dispatch(saveWheelTitle(ownProps.id, title))
-    }
+    },
   };
 };
 

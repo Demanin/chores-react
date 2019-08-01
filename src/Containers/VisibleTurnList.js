@@ -1,9 +1,9 @@
-import { connect } from 'react-redux';
 import Turn from '../Components/ChoreWheelList/ChoreWheel/Turn';
-import getNameList from '../Actions/getNameList';
 import completeTurn from '../Actions/completeTurn';
-import skipTurn from '../Actions/skipTurn';
+import { connect } from 'react-redux';
+import getNameList from '../Actions/getNameList';
 import removeTurn from '../Actions/removeTurn';
+import skipTurn from '../Actions/skipTurn';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     onRemoveClick: (turn) => {
       dispatch(removeTurn(ownProps.choreWheel.id));
-    }
+    },
   };
 };
 

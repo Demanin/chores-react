@@ -1,10 +1,10 @@
-import { connect } from 'react-redux';
 import BaseAddChoreWheel from '../Components/ChoreWheelList/AddChoreWheel';
 import addChoreWheel from '../Actions/addChoreWheel';
+import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    visibilityFilter: state.visibilityFilter
+    visibilityFilter: state.visibilityFilter,
   };
 };
 
@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onClick: (isVisible) => {
       dispatch(addChoreWheel(1, 1, isVisible));
-    }
+    },
   };
 };
 
@@ -29,7 +29,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
       }
 
       dispatchProps.onClick(true);
-    }
+    },
   };
 };
 
