@@ -67,7 +67,7 @@ class Turn extends Component
 }
 
 Turn.propTypes = {
-  turnList: PropTypes.arrayOf(PropType.string),
+  turnList: PropTypes.arrayOf(PropTypes.string),
   onRemoveClick: PropTypes.func,
   onSkipClick: PropTypes.func,
   onCompleteClick: PropTypes.func,

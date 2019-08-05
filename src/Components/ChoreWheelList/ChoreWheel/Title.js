@@ -5,21 +5,21 @@ import TitleForm from './TitleForm';
 class Title extends Component
 {
   render() {
-    if (!this.props.title.isEditable) {
+    if (!this.props.choreWheel.title.isEditable) {
       return (
         <h3
           style={{marginTop: '0px'}}
           onClick={this.props.onEditClick}
         >
-          {this.props.title.text}
+          {this.props.choreWheel.title.text}
         </h3>
       );
     }
 
     return (
       <TitleForm
-        id={this.props.id}
-        title={this.props.title.text}
+        choreWheel={this.props.choreWheel}
+        title={this.props.choreWheel.title.text}
         onSave={this.props.onSaveClick}
       />
     );
@@ -27,13 +27,20 @@ class Title extends Component
 }
 
 Title.propTypes = {
-  title: PropTypes.shape({
-    isEditable: PropTypes.bool,
-    text: PropTypes.string,
+  choreWheel: PropTypes.shape({
+    id: PropTypes.number,
+    turnList: PropTypes.arrayOf(
+      PropTypes.shape({ userId: PropTypes.number })
+    ),
+    title: PropTypes.shape({
+      text: PropTypes.string,
+      isEditable: PropTypes.bool,
+    }),
+    isVisible: PropTypes.bool,
+    priority: PropTypes.number,
   }),
   onEditClick: PropTypes.func,
   onSaveClick: PropTypes.func,
-  id: PropTypes.number,
 };
 
 export default Title;

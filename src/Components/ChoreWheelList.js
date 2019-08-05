@@ -5,6 +5,12 @@ import PropTypes from 'prop-types';
 
 class ChoreWheelList extends Component
 {
+  componentDidUpdate() {
+    if (this.props.refresh === true) {
+      this.props.refreshWheels();
+    }
+  }
+
   render() {
     if (0 === this.props.choreWheelList.length) {
       return null;
@@ -13,6 +19,11 @@ class ChoreWheelList extends Component
     return (
       <div>
         <Container>
+          {this.props.refresh &&
+          <div>
+            Refreshing...
+          </div>
+          }
           {this.props.choreWheelList.map((choreWheel, index) =>
             <ChoreWheel
               key={index}
@@ -32,23 +43,27 @@ class ChoreWheelList extends Component
 }
 
 ChoreWheelList.propTypes = {
-  choreWheelList: PropTypes.arrayOf({
-    id: PropTypes.number,
-    turnList: PropTypes.arrayOf(
-      PropTypes.shape({ userId: PropTypes.number })
-    ),
-    title: PropTypes.shape({
-      text: PropTypes.string,
-      isEditable: PropTypes.bool,
-    }),
-    isVisible: PropTypes.bool,
-    priority: PropTypes.number,
-  }),
+  choreWheelList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      turnList: PropTypes.arrayOf(
+        PropTypes.shape({ userId: PropTypes.number })
+      ),
+      title: PropTypes.shape({
+        text: PropTypes.string,
+        isEditable: PropTypes.bool,
+      }),
+      isVisible: PropTypes.bool,
+      priority: PropTypes.number,
+    })
+  ),
   onAddClick: PropTypes.func,
   onShowClick: PropTypes.func,
   onHideClick: PropTypes.func,
   onRemoveWheelClick: PropTypes.func,
   onRemoveTurnClick: PropTypes.func,
+  refreshWheels: PropTypes.func,
+  refresh: PropTypes.bool,
 };
 
 export default ChoreWheelList;

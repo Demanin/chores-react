@@ -9,39 +9,6 @@ import WheelTurnAdder from '../../Containers/WheelTurnAdder';
 
 class ChoreWheel extends Component
 {
-  componentDidUpdate()
-  {
-    const { id, turnList, title, isVisible, priority } = this.props.choreWheel;
-
-    if (title.text === '') {
-      return;
-    }
-
-    return fetch(
-      process.env.REACT_APP_SERVER + '/api/wheels/' + id,
-      {
-        headers:{
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          turnList,
-          title: title.text,
-          isVisible,
-          priority,
-        }),
-        method: 'POST',
-      }
-    )
-      .then(res => res.json())
-      .then(
-        (result) => {},
-        (error) => {
-          console.log(error);
-        }
-      );
-  }
-
   render() {
     return (
       <Card className="mt-4">
@@ -49,8 +16,7 @@ class ChoreWheel extends Component
           <Row>
             <Col xs={9} md={10} style={{minHeight: '40px'}}>
               <WheelHeader
-                id={this.props.choreWheel.id}
-                title={this.props.choreWheel.title}
+                choreWheel={this.props.choreWheel}
               />
             </Col>
             <Col xs={3} md={2} className="text-right">
@@ -103,7 +69,7 @@ ChoreWheel.propTypes = {
   }),
   onShowClick: PropTypes.func,
   onHideClick: PropTypes.func,
-  onRemoveWheelClick: PropTypes.click,
+  onRemoveWheelClick: PropTypes.func,
 };
 
 export default ChoreWheel;

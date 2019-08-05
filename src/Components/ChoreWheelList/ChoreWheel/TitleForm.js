@@ -28,7 +28,7 @@ class TitleForm extends Component
   render() {
     return (
       <FormGroup
-        controlId={"title-editor-" + this.props.id}
+        controlId={'title-editor-' + this.props.choreWheel.id}
       >
         <FormControl
           autoFocus
@@ -43,7 +43,18 @@ class TitleForm extends Component
 }
 
 TitleForm.propTypes = {
-  id: PropTypes.number,
+  choreWheel: PropTypes.shape({
+    id: PropTypes.number,
+    turnList: PropTypes.arrayOf(
+      PropTypes.shape({ userId: PropTypes.number })
+    ),
+    title: PropTypes.shape({
+      text: PropTypes.string,
+      isEditable: PropTypes.bool,
+    }),
+    isVisible: PropTypes.bool,
+    priority: PropTypes.number,
+  }),
   title: PropTypes.string,
   onSave: PropTypes.func,
 };
