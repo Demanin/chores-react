@@ -1,14 +1,22 @@
 
 const getVisibleChoreWheels = (choreWheelList, filter) => {
+  const relevantList = getRelevantList(choreWheelList, filter);
+
+  return relevantList.sort((first, second) => {
+    return (first.priority - second.priority);
+  });
+};
+
+const getRelevantList = (choreWheelList, filter) => {
   switch (filter) {
     case 'SHOW_ALL':
-      return choreWheelList;
+      return Object.values(choreWheelList.byId);
     case 'SHOW_VISIBLE':
-      return choreWheelList.filter(choreWheel => choreWheel.isVisible);
+      return Object.values(choreWheelList.byId).filter(choreWheel => choreWheel.isVisible);
     case 'SHOW_HIDDEN':
-      return choreWheelList.filter(choreWheel => !choreWheel.isVisible);
+      return Object.values(choreWheelList.byId).filter(choreWheel => !choreWheel.isVisible);
     default:
-      return choreWheelList;
+      return Object.values(choreWheelList.byId);
   }
 };
 
