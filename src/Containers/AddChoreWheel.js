@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onClick: (isVisible) => {
-      dispatch(addChoreWheel(1, 1, isVisible));
+      dispatch(addChoreWheel(1, isVisible));
     },
   };
 };

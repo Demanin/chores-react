@@ -1,15 +1,19 @@
 import Title from '../Components/ChoreWheelList/ChoreWheel/Title';
 import { connect } from 'react-redux';
 import editWheelTitle from '../Actions/editWheelTitle';
-import saveWheelTitle from '../Actions/saveWheelTitle';
+import patchChoreWheel from '../Actions/patchChoreWheel';
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onEditClick: () => {
-      dispatch(editWheelTitle(ownProps.id))
+      dispatch(editWheelTitle(ownProps.choreWheel.id));
     },
     onSaveClick: (title) => {
-      dispatch(saveWheelTitle(ownProps.id, title))
+      const patchedChoreWheel = {
+        title,
+      };
+
+      dispatch(patchChoreWheel(ownProps.choreWheel.id, patchedChoreWheel));
     },
   };
 };

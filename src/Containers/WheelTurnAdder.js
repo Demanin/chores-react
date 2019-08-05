@@ -1,9 +1,9 @@
 import AddTurn from '../Components/ChoreWheelList/ChoreWheel/AddTurn';
 import allowAddTurn from '../Actions/allowAddTurn';
 import { connect } from 'react-redux';
-import saveAddTurn from '../Actions/saveAddTurn';
+import patchChoreWheel from '../Actions/patchChoreWheel';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     userList: Object.values(state.userList),
   };
@@ -12,10 +12,17 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onEditClick: () => {
-      dispatch(allowAddTurn(ownProps.choreWheel.id))
+      dispatch(allowAddTurn(ownProps.choreWheel.id));
     },
     onSaveClick: (turn) => {
-      dispatch(saveAddTurn(ownProps.choreWheel.id, turn))
+      const patchedChoreWheel = {
+        turnList: [
+          ...ownProps.choreWheel.turnList,
+          turn,
+        ],
+      };
+
+      dispatch(patchChoreWheel(ownProps.choreWheel.id, patchedChoreWheel));
     },
   };
 };

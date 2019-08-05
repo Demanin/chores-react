@@ -1,37 +1,58 @@
 import ChoreWheelList from '../Components/ChoreWheelList';
 import { connect } from 'react-redux';
 import getVisibleChoreWheels from '../Actions/getVisibleChoreWheels';
-import hideChoreWheel from '../Actions/hideChoreWheel';
+import patchChoreWheel from '../Actions/patchChoreWheel';
+import refreshWheels from '../Actions/refreshWheels';
 import removeChoreWheel from '../Actions/removeChoreWheel';
-import removeTurn from '../Actions/removeTurn';
-import showChoreWheel from '../Actions/showChoreWheel';
 
 const mapStateToProps = (state) => {
   return {
+    fullChoreWheelList: state.choreWheelList,
     choreWheelList: getVisibleChoreWheels(state.choreWheelList, state.visibilityFilter),
+    refresh: state.choreWheelList.refresh,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onShowClick: (id) => {
-      dispatch(showChoreWheel(id));
+      const patchedChoreWheel = {
+        isVisible: true,
+      };
+
+      dispatch(patchChoreWheel(id, patchedChoreWheel));
     },
     onHideClick: (id) => {
-      dispatch(hideChoreWheel(id));
+      const patchedChoreWheel = {
+        isVisible: false,
+      };
+
+      dispatch(patchChoreWheel(id, patchedChoreWheel));
     },
     onRemoveWheelClick: (id) => {
       dispatch(removeChoreWheel(id));
     },
-    onRemoveTurnClick: (id, index) => {
-      dispatch(removeTurn(id, index))
+    refreshWheels: (choreWheelList) => {
+      dispatch(refreshWheels(choreWheelList));
+    },
+  };
+};
+
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  return {
+    ...ownProps,
+    ...stateProps,
+    ...dispatchProps,
+    refreshWheels: () => {
+      dispatchProps.refreshWheels(stateProps.fullChoreWheelList)
     },
   };
 };
 
 const VisibleList = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
+  mergeProps
 ) (ChoreWheelList);
 
 export default VisibleList;
