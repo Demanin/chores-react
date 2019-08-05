@@ -1,9 +1,5 @@
 
 const ChoreWheel = (state = [], action) => {
-  if (state.id !== action.id) {
-    return state;
-  }
-
   switch (action.type) {
     case 'HIDE_CHORE_WHEEL':
       return {
