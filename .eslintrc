@@ -1,0 +1,37 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 9,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "comma-dangle": ["error", "always-multiline"],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "quotes": ["error", "single"],
+    "sort-imports": ["error"],
+    "space-infix-ops": ["error"],
+    "space-unary-ops": ["error"]
+  },
+  "overrides": [
+    // Add jest environment to jest tests
+    {
+      "files": [ "**/*.test.js" ],
+      "env": {
+        "jest": true
+      },
+      "plugins": ["jest"]
+    }
+  ]
+}
