@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
+import { Button, FormControl, FormGroup } from 'react-bootstrap';
 import React, { Component } from 'react';
-import { Button, FormGroup, FormControl } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 
 class AddTurn extends Component
 {
@@ -34,7 +34,7 @@ class AddTurn extends Component
     return (
       <div>
         <FormGroup
-          controlId={"turn-adder-" + this.props.id}
+          controlId={'turn-adder-' + this.props.id}
           size="sm"
         >
           <FormControl

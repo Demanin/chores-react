@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddTurn add turn not allowed 1`] = `ShallowWrapper {}`;
+
+exports[`AddTurn empty user list 1`] = `ShallowWrapper {}`;
