@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TurnList empty wheel snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`TurnList single turn snapshot 1`] = `ShallowWrapper {}`;

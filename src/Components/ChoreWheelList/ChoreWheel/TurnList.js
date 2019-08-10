@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
-class Turn extends Component
+class TurnList extends Component
 {
   render() {
     if (0 >= this.props.turnList.length) {
@@ -66,11 +66,11 @@ class Turn extends Component
   }
 }
 
-Turn.propTypes = {
+TurnList.propTypes = {
   turnList: PropTypes.arrayOf(PropTypes.string),
   onRemoveClick: PropTypes.func,
   onSkipClick: PropTypes.func,
   onCompleteClick: PropTypes.func,
 }
 
-export default Turn;
+export default TurnList;

@@ -1,9 +1,9 @@
 import React from 'react';
-import Turn from 'src/Components/ChoreWheelList/ChoreWheel/Turn';
+import TurnList from 'src/Components/ChoreWheelList/ChoreWheel/TurnList';
 import Utility from 'jest/Utility';
 import { shallow } from 'enzyme';
 
-describe('ShowHideButton', () => {
+describe('TurnList', () => {
   let onCompleteClick;
   let onSkipClick;
   let onRemoveClick;
@@ -15,7 +15,7 @@ describe('ShowHideButton', () => {
   });
 
   test('empty wheel snapshot', () => {
-    const fixture = shallow(<Turn
+    const fixture = shallow(<TurnList
       turnList={[]}
       {...{ onCompleteClick, onSkipClick, onRemoveClick }}
     />);
@@ -26,7 +26,7 @@ describe('ShowHideButton', () => {
   test('single turn snapshot', () => {
     const turn = 'Random User Name';
 
-    const fixture = shallow(<Turn
+    const fixture = shallow(<TurnList
       turnList={[turn]}
       {...{ onCompleteClick, onSkipClick, onRemoveClick }}
     />);
@@ -37,7 +37,7 @@ describe('ShowHideButton', () => {
   test('single turn title', () => {
     const turn = Utility.getRandomString();
 
-    const fixture = shallow(<Turn
+    const fixture = shallow(<TurnList
       turnList={[turn]}
       {...{ onCompleteClick, onSkipClick, onRemoveClick }}
     />);
@@ -48,7 +48,7 @@ describe('ShowHideButton', () => {
   test('single turn complete click', () => {
     const turn = Utility.getRandomString();
 
-    const fixture = shallow(<Turn
+    const fixture = shallow(<TurnList
       turnList={[turn]}
       {...{ onCompleteClick, onSkipClick, onRemoveClick }}
     />);
@@ -63,7 +63,7 @@ describe('ShowHideButton', () => {
   test('single turn skip click', () => {
     const turn = Utility.getRandomString();
 
-    const fixture = shallow(<Turn
+    const fixture = shallow(<TurnList
       turnList={[turn]}
       {...{ onCompleteClick, onSkipClick, onRemoveClick }}
     />);
@@ -78,7 +78,7 @@ describe('ShowHideButton', () => {
   test('single turn remove click', () => {
     const turn = Utility.getRandomString();
 
-    const fixture = shallow(<Turn
+    const fixture = shallow(<TurnList
       turnList={[turn]}
       {...{ onCompleteClick, onSkipClick, onRemoveClick }}
     />);
@@ -94,7 +94,7 @@ describe('ShowHideButton', () => {
     const turnA = Utility.getRandomString();
     const turnB = Utility.getRandomString();
 
-    const fixture = shallow(<Turn
+    const fixture = shallow(<TurnList
       turnList={[turnA, turnB]}
       {...{ onCompleteClick, onSkipClick, onRemoveClick }}
     />);
@@ -109,7 +109,7 @@ describe('ShowHideButton', () => {
     const turnC = Utility.getRandomString();
     const turnD = Utility.getRandomString();
 
-    const fixture = shallow(<Turn
+    const fixture = shallow(<TurnList
       turnList={[turnA, turnB, turnC, turnD]}
       {...{ onCompleteClick, onSkipClick, onRemoveClick }}
     />);

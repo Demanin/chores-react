@@ -1,4 +1,4 @@
-import Turn from '../Components/ChoreWheelList/ChoreWheel/Turn';
+import TurnList from '../Components/ChoreWheelList/ChoreWheel/TurnList';
 import { connect } from 'react-redux';
 import getNameList from '../Actions/getNameList';
 import patchChoreWheel from '../Actions/patchChoreWheel';
@@ -57,9 +57,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-const VisibleTurn = connect(
+const VisibleTurnList = connect(
   mapStateToProps,
   mapDispatchToProps
-) (Turn);
+) (TurnList);
 
-export default VisibleTurn;
+export default VisibleTurnList;
