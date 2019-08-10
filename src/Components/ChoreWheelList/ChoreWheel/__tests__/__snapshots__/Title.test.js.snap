@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title editable title snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`Title non-editable title snapshot 1`] = `ShallowWrapper {}`;
