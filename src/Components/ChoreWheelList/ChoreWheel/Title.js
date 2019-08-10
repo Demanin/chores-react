@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import TitleForm from './TitleForm';
+import TitleForm from 'src/Components/ChoreWheelList/ChoreWheel/TitleForm';
 
 class Title extends Component
 {

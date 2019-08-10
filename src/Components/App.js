@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import AddChoreWheel from '../Containers/AddChoreWheel';
+import AddChoreWheel from 'src/Containers/AddChoreWheel';
 import { Container } from 'react-bootstrap';
-import Footer from './Footer/Footer';
-import VisibleList from '../Containers/VisibleList';
+import Footer from 'src/Components/Footer/Footer';
+import VisibleList from 'src/Containers/VisibleList';
 
 class App extends Component
 {

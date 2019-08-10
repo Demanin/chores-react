@@ -1,7 +1,7 @@
-import TurnList from '../Components/ChoreWheelList/ChoreWheel/TurnList';
+import TurnList from 'src/Components/ChoreWheelList/ChoreWheel/TurnList';
 import { connect } from 'react-redux';
-import getNameList from '../Actions/getNameList';
-import patchChoreWheel from '../Actions/patchChoreWheel';
+import getNameList from 'src/Actions/getNameList';
+import patchChoreWheel from 'src/Actions/patchChoreWheel';
 
 const mapStateToProps = (state, ownProps) => {
   return {

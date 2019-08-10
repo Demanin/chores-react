@@ -1,15 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { faCheck, faEye, faEyeSlash, faForward, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
-import App from './Components/App';
+import App from 'src/Components/App';
 import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import loadUsers from './Actions/loadUsers.js';
-import loadWheels from './Actions/loadWheels.js';
-import refreshWheels from './Actions/refreshWheels.js';
-import registerServiceWorker from './registerServiceWorker';
-import store from './Reducers/Reducer';
+import loadUsers from 'src/Actions/loadUsers.js';
+import loadWheels from 'src/Actions/loadWheels.js';
+import refreshWheels from 'src/Actions/refreshWheels.js';
+import registerServiceWorker from 'registerServiceWorker';
+import store from 'src/Reducers/Reducer';
 
 library.add(faCheck);
 library.add(faEye);

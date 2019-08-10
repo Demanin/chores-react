@@ -1,6 +1,6 @@
 import { ButtonGroup, Col, Row } from 'react-bootstrap';
 import React, { Component } from 'react';
-import FilterButton from '../../Containers/FilterButton';
+import FilterButton from 'src/Containers/FilterButton';
 
 class Footer extends Component
 {

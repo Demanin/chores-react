@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ChoreWheel from './ChoreWheelList/ChoreWheel';
+import ChoreWheel from 'src/Components/ChoreWheelList/ChoreWheel';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 

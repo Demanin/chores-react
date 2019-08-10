@@ -2,10 +2,10 @@ import { Button, Card, Col, Row } from 'react-bootstrap';
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import ShowHideButton from './ChoreWheel/ShowHideButton';
-import VisibleTurnList from '../../Containers/VisibleTurnList';
-import WheelHeader from '../../Containers/WheelHeader';
-import WheelTurnAdder from '../../Containers/WheelTurnAdder';
+import ShowHideButton from 'src/Components/ChoreWheelList/ChoreWheel/ShowHideButton';
+import VisibleTurnList from 'src/Containers/VisibleTurnList';
+import WheelHeader from 'src/Containers/WheelHeader';
+import WheelTurnAdder from 'src/Containers/WheelTurnAdder';
 
 class ChoreWheel extends Component
 {

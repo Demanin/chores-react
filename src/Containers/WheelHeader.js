@@ -1,7 +1,7 @@
-import Title from '../Components/ChoreWheelList/ChoreWheel/Title';
+import Title from 'src/Components/ChoreWheelList/ChoreWheel/Title';
 import { connect } from 'react-redux';
-import editWheelTitle from '../Actions/editWheelTitle';
-import patchChoreWheel from '../Actions/patchChoreWheel';
+import editWheelTitle from 'src/Actions/editWheelTitle';
+import patchChoreWheel from 'src/Actions/patchChoreWheel';
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {

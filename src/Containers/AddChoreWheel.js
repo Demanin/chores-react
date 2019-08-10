@@ -1,5 +1,5 @@
-import BaseAddChoreWheel from '../Components/ChoreWheelList/AddChoreWheel';
-import addChoreWheel from '../Actions/addChoreWheel';
+import BaseAddChoreWheel from 'src/Components/ChoreWheelList/AddChoreWheel';
+import addChoreWheel from 'src/Actions/addChoreWheel';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => {

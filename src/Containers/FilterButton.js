@@ -1,6 +1,6 @@
-import Button from '../Components/Footer/Button';
+import Button from 'src/Components/Footer/Button';
 import { connect } from 'react-redux';
-import setVisiblityFilter from '../Actions/setVisiblityFilter';
+import setVisiblityFilter from 'src/Actions/setVisiblityFilter';
 
 const mapStateToProps = (state, ownProps) => {
   return {

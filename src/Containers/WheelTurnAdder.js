@@ -1,7 +1,7 @@
-import AddTurn from '../Components/ChoreWheelList/ChoreWheel/AddTurn';
-import allowAddTurn from '../Actions/allowAddTurn';
+import AddTurn from 'src/Components/ChoreWheelList/ChoreWheel/AddTurn';
+import allowAddTurn from 'src/Actions/allowAddTurn';
 import { connect } from 'react-redux';
-import patchChoreWheel from '../Actions/patchChoreWheel';
+import patchChoreWheel from 'src/Actions/patchChoreWheel';
 
 const mapStateToProps = (state) => {
   return {
