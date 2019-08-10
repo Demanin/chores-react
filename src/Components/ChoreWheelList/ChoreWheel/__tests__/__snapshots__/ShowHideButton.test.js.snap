@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowHideButton hidden snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`ShowHideButton visible snapshot 1`] = `ShallowWrapper {}`;
