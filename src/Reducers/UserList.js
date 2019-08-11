@@ -1,5 +1,5 @@
 
-const UserList = (state = [], action) => {
+const UserList = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_USER':
       return {
