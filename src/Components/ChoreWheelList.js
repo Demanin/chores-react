@@ -28,11 +28,9 @@ class ChoreWheelList extends Component
             <ChoreWheel
               key={index}
               choreWheel={choreWheel}
-              onAddClick={this.props.onAddClick}
               onShowClick={this.props.onShowClick}
               onHideClick={this.props.onHideClick}
               onRemoveWheelClick={this.props.onRemoveWheelClick}
-              onRemoveTurnClick={this.props.onRemoveTurnClick}
             />
           )}
         </Container>
@@ -57,11 +55,9 @@ ChoreWheelList.propTypes = {
       priority: PropTypes.number,
     })
   ),
-  onAddClick: PropTypes.func,
   onShowClick: PropTypes.func,
   onHideClick: PropTypes.func,
   onRemoveWheelClick: PropTypes.func,
-  onRemoveTurnClick: PropTypes.func,
   refreshWheels: PropTypes.func,
   refresh: PropTypes.bool,
 };
