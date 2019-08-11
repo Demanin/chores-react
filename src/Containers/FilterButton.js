@@ -1,6 +1,6 @@
 import Button from 'src/Components/Footer/Button';
 import { connect } from 'react-redux';
-import setVisiblityFilter from 'src/Actions/setVisiblityFilter';
+import setVisibilityFilter from 'src/Actions/setVisibilityFilter';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onClick: () => {
-      dispatch(setVisiblityFilter(ownProps.filter))
+      dispatch(setVisibilityFilter(ownProps.filter))
     },
   };
 };
