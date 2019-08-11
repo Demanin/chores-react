@@ -8,42 +8,6 @@ describe('ChoreWheel', () => {
     expect(actual).toEqual({});
   });
 
-  test('hide chore wheel from default state', () => {
-    const type = 'HIDE_CHORE_WHEEL';
-
-    const actual = ChoreWheel(undefined, { type });
-
-    expect(actual).toEqual({ isVisible: false });
-  });
-
-  test('hide chore wheel from existing state', () => {
-    const type = 'HIDE_CHORE_WHEEL';
-    const key = Utility.getRandomNumber();
-    const value = Utility.getRandomString();
-
-    const actual = ChoreWheel({ [key]: value }, { type });
-
-    expect(actual).toEqual({ [key]: value, isVisible: false });
-  });
-
-  test('show chore wheel from default state', () => {
-    const type = 'SHOW_CHORE_WHEEL';
-
-    const actual = ChoreWheel(undefined, { type });
-
-    expect(actual).toEqual({ isVisible: true });
-  });
-
-  test('show chore wheel from existing state', () => {
-    const type = 'SHOW_CHORE_WHEEL';
-    const key = Utility.getRandomNumber();
-    const value = Utility.getRandomString();
-
-    const actual = ChoreWheel({ [key]: value }, { type });
-
-    expect(actual).toEqual({ [key]: value, isVisible: true });
-  });
-
   test('allow add turn from default state', () => {
     const type = 'ALLOW_ADD_TURN';
 
@@ -62,21 +26,39 @@ describe('ChoreWheel', () => {
     expect(actual).toEqual({ [key]: value, allowAddTurn: true });
   });
 
-  test('stop add turn from default state', () => {
-    const type = 'STOP_ADD_TURN';
+  test('edit wheel title from default state', () => {
+    const type = 'EDIT_WHEEL_TITLE';
 
     const actual = ChoreWheel(undefined, { type });
 
-    expect(actual).toEqual({ allowAddTurn: false });
+    expect(actual).toEqual({ title: { isEditable: true } });
   });
 
-  test('stop add turn from existing state', () => {
-    const type = 'STOP_ADD_TURN';
-    const key = Utility.getRandomNumber();
-    const value = Utility.getRandomString();
+  test('edit wheel title from existing state', () => {
+    const type = 'EDIT_WHEEL_TITLE';
+    const text = Utility.getRandomString();
 
-    const actual = ChoreWheel({ [key]: value }, { type });
+    const actual = ChoreWheel({ title: { text }}, { type });
 
-    expect(actual).toEqual({ [key]: value, allowAddTurn: false });
+    expect(actual).toEqual({ title: { text, isEditable: true } });
+  });
+
+  test('save wheel title from default state', () => {
+    const type = 'SAVE_WHEEL_TITLE';
+    const text = Utility.getRandomString();
+
+    const actual = ChoreWheel(undefined, { type, title: text });
+
+    expect(actual).toEqual({ title: { text, isEditable: false } });
+  });
+
+  test('save wheel title from existing state', () => {
+    const type = 'SAVE_WHEEL_TITLE';
+    const oldText = Utility.getRandomString();
+    const newText = Utility.getRandomString();
+
+    const actual = ChoreWheel({ title: { text: oldText }}, { type, title: newText });
+
+    expect(actual).toEqual({ title: { text: newText, isEditable: false } });
   });
 });
