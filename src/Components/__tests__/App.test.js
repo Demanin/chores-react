@@ -1,6 +1,5 @@
 import App from 'src/Components/App';
 import React from 'react';
-import Utility from 'jest/Utility';
 import { shallow } from 'enzyme';
 
 describe('App', () => {

@@ -1,4 +1,3 @@
-import 'jest/setUpEnzyme';
 import crypto from 'crypto';
 
 const getRandomString = (length = 20) => {

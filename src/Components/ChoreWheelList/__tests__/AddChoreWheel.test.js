@@ -1,6 +1,5 @@
 import AddChoreWheel from 'src/Components/ChoreWheelList/AddChoreWheel';
 import React from 'react';
-import Utility from 'jest/Utility';
 import { shallow } from 'enzyme';
 
 describe('AddChoreWheel', () => {
