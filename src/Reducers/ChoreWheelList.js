@@ -8,10 +8,6 @@ const ChoreWheelList = (state = {refresh: false, byId: {}, allIds: []}, action) 
         refresh: !state.refresh,
       };
     case 'ADD_CHORE_WHEEL':
-      if (state.allIds.includes(action.id)) {
-        return ChoreWheelList(state, {...action, type: 'OVERWRITE_CHORE_WHEEL'});
-      }
-
       return {
         ...state,
         byId: {
@@ -20,7 +16,7 @@ const ChoreWheelList = (state = {refresh: false, byId: {}, allIds: []}, action) 
             id: action.id,
             title: {
               text: action.title || '',
-              isEditable: action.isEditable,
+              isEditable: false,
             },
             turnList: action.turnList || [],
             isVisible: action.isVisible,
@@ -32,10 +28,6 @@ const ChoreWheelList = (state = {refresh: false, byId: {}, allIds: []}, action) 
         allIds: [...state.allIds, action.id],
       };
     case 'OVERWRITE_CHORE_WHEEL':
-      if (!state.allIds.includes(action.id)) {
-        return ChoreWheelList(state, {...action, type: 'ADD_CHORE_WHEEL'});
-      }
-
       return {
         ...state,
         byId: {
