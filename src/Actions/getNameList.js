@@ -1,7 +1,13 @@
 
 const getNameList = (choreWheel, userList) => {
   const turnList = choreWheel.turnList.map(
-    (turn) => userList[turn.userId].name
+    (turn) => {
+      if (!userList.hasOwnProperty(turn.userId)) {
+        return '--- Unknown User ---';
+      }
+
+      return userList[turn.userId].name;
+    }
   );
 
   return [
