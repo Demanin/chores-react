@@ -46,7 +46,7 @@ TitleForm.propTypes = {
   choreWheel: PropTypes.shape({
     id: PropTypes.number,
     turnList: PropTypes.arrayOf(
-      PropTypes.shape({ userId: PropTypes.number })
+      PropTypes.shape({ userId: PropTypes.number }),
     ),
     title: PropTypes.shape({
       text: PropTypes.string,

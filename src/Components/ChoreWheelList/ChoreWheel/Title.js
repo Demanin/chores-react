@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import TitleForm from 'src/Components/ChoreWheelList/ChoreWheel/TitleForm';
+import TitleForm from 'Components/ChoreWheelList/ChoreWheel/TitleForm';
 
 class Title extends Component
 {
@@ -30,7 +30,7 @@ Title.propTypes = {
   choreWheel: PropTypes.shape({
     id: PropTypes.number,
     turnList: PropTypes.arrayOf(
-      PropTypes.shape({ userId: PropTypes.number })
+      PropTypes.shape({ userId: PropTypes.number }),
     ),
     title: PropTypes.shape({
       text: PropTypes.string,

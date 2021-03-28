@@ -55,11 +55,13 @@ class TurnList extends Component
           </div>
         }
         {hasFollowingTurns &&
-          this.props.turnList.slice(2).map((turn, index) =>
-            <div className="well-sm" key={index} style={{color: '#aaa'}}>
-              {turn}
-            </div>
-          )
+          this.props.turnList.slice(2).map((turn, index) => {
+            return (
+              <div className="well-sm" key={index} style={{color: '#aaa'}}>
+                {turn}
+              </div>
+            );
+          })
         }
       </div>
     );

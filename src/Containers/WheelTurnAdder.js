@@ -1,7 +1,7 @@
-import AddTurn from 'src/Components/ChoreWheelList/ChoreWheel/AddTurn';
-import allowAddTurn from 'src/Actions/allowAddTurn';
+import AddTurn from 'Components/ChoreWheelList/ChoreWheel/AddTurn';
+import allowAddTurn from 'Actions/allowAddTurn';
 import { connect } from 'react-redux';
-import patchChoreWheel from 'src/Actions/patchChoreWheel';
+import patchChoreWheel from 'Actions/patchChoreWheel';
 
 const mapStateToProps = (state) => {
   return {
@@ -29,7 +29,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 const WheelTurnAdder = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(AddTurn);
 
 export default WheelTurnAdder;

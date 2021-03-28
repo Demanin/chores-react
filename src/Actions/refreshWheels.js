@@ -1,11 +1,11 @@
-import toggleRefresh from 'src/Actions/toggleRefresh';
+import toggleRefresh from 'Actions/toggleRefresh';
 
 const refreshWheels = (choreWheelList) => {
   return async (dispatch) => {
     dispatch(toggleRefresh());
     const result = await fetch(
       process.env.REACT_APP_SERVER + '/api/wheels',
-      {headers: {'Accept': 'application/json'}}
+      {headers: {'Accept': 'application/json'}},
     );
 
     let refreshedList;

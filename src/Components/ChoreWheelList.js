@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ChoreWheel from 'src/Components/ChoreWheelList/ChoreWheel';
+import ChoreWheel from 'Components/ChoreWheelList/ChoreWheel';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
@@ -31,7 +31,7 @@ class ChoreWheelList extends Component
               onShowClick={this.props.onShowClick}
               onHideClick={this.props.onHideClick}
               onRemoveWheelClick={this.props.onRemoveWheelClick}
-            />
+            />,
           )}
         </Container>
         <hr />
@@ -45,7 +45,7 @@ ChoreWheelList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number,
       turnList: PropTypes.arrayOf(
-        PropTypes.shape({ userId: PropTypes.number })
+        PropTypes.shape({ userId: PropTypes.number }),
       ),
       title: PropTypes.shape({
         text: PropTypes.string,
@@ -53,7 +53,7 @@ ChoreWheelList.propTypes = {
       }),
       isVisible: PropTypes.bool,
       priority: PropTypes.number,
-    })
+    }),
   ),
   onShowClick: PropTypes.func,
   onHideClick: PropTypes.func,

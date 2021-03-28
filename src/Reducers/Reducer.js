@@ -1,8 +1,8 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import choreWheelList from 'src/Reducers/ChoreWheelList';
+import choreWheelList from 'Reducers/ChoreWheelList';
 import thunk from 'redux-thunk';
-import userList from 'src/Reducers/UserList';
-import visibilityFilter from 'src/Reducers/VisibilityFilter';
+import userList from 'Reducers/UserList';
+import visibilityFilter from 'Reducers/VisibilityFilter';
 
 const choreWheelApp = combineReducers({
   choreWheelList,
@@ -12,7 +12,7 @@ const choreWheelApp = combineReducers({
 
 const store = createStore(
   choreWheelApp,
-  applyMiddleware(thunk)
+  applyMiddleware(thunk),
 );
 
 export default store;

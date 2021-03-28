@@ -1,7 +1,7 @@
-import TurnList from 'src/Components/ChoreWheelList/ChoreWheel/TurnList';
+import TurnList from 'Components/ChoreWheelList/ChoreWheel/TurnList';
 import { connect } from 'react-redux';
-import getNameList from 'src/Actions/getNameList';
-import patchChoreWheel from 'src/Actions/patchChoreWheel';
+import getNameList from 'Actions/getNameList';
+import patchChoreWheel from 'Actions/patchChoreWheel';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -48,7 +48,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       const choreWheel = ownProps.choreWheel;
       const patchedChoreWheel = {
         turnList: choreWheel.turnList.filter(
-          (turn, currentIndex) => choreWheel.currentTurn !== currentIndex
+          (turn, currentIndex) => choreWheel.currentTurn !== currentIndex,
         ),
       };
 
@@ -59,7 +59,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 const VisibleTurnList = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 ) (TurnList);
 
 export default VisibleTurnList;

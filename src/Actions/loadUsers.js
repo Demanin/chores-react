@@ -2,7 +2,7 @@
 const loadUsers = async (dispatch) => {
   const result = await fetch(
     process.env.REACT_APP_SERVER + '/api/users',
-    {headers: {'Accept': 'application/json'}}
+    {headers: {'Accept': 'application/json'}},
   );
 
   let userList;

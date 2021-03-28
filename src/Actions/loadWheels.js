@@ -2,7 +2,7 @@
 const loadWheels = async (dispatch) => {
   const result = await fetch(
     process.env.REACT_APP_SERVER + '/api/wheels',
-    {headers: {'Accept': 'application/json'}}
+    {headers: {'Accept': 'application/json'}},
   );
 
   let wheelList;

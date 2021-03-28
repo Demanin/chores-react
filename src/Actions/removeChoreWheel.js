@@ -1,4 +1,4 @@
-import toggleRefresh from 'src/Actions/toggleRefresh';
+import toggleRefresh from 'Actions/toggleRefresh';
 
 const removeChoreWheel = (id) => {
   return async (dispatch) => {
@@ -10,7 +10,7 @@ const removeChoreWheel = (id) => {
             'Accept': 'application/json',
           },
           method: 'DELETE',
-        }
+        },
       );
     } catch (error) {
       console.log(error);

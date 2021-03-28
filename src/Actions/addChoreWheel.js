@@ -15,7 +15,7 @@ const addChoreWheel = (ownerId, isVisible) => {
           isVisible,
         }),
         method: 'POST',
-      }
+      },
     );
 
     let result;

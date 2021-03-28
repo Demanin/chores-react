@@ -1,4 +1,4 @@
-import toggleRefresh from 'src/Actions/toggleRefresh';
+import toggleRefresh from 'Actions/toggleRefresh';
 
 const patchChoreWheel = (id, patchedChoreWheel) => {
   return async (dispatch) => {
@@ -11,7 +11,7 @@ const patchChoreWheel = (id, patchedChoreWheel) => {
         },
         body: JSON.stringify(patchedChoreWheel),
         method: 'PATCH',
-      }
+      },
     );
 
     try {

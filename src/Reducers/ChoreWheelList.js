@@ -1,4 +1,4 @@
-import choreWheel from 'src/Reducers/ChoreWheel';
+import choreWheel from 'Reducers/ChoreWheel';
 
 const ChoreWheelList = (state = {refresh: false, byId: {}, allIds: []}, action) => {
   switch (action.type) {

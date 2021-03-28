@@ -1,9 +1,9 @@
-import ChoreWheelList from 'src/Components/ChoreWheelList';
+import ChoreWheelList from 'Components/ChoreWheelList';
 import { connect } from 'react-redux';
-import getVisibleChoreWheels from 'src/Actions/getVisibleChoreWheels';
-import patchChoreWheel from 'src/Actions/patchChoreWheel';
-import refreshWheels from 'src/Actions/refreshWheels';
-import removeChoreWheel from 'src/Actions/removeChoreWheel';
+import getVisibleChoreWheels from 'Actions/getVisibleChoreWheels';
+import patchChoreWheel from 'Actions/patchChoreWheel';
+import refreshWheels from 'Actions/refreshWheels';
+import removeChoreWheel from 'Actions/removeChoreWheel';
 
 const mapStateToProps = (state) => {
   return {
@@ -52,7 +52,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
 const VisibleList = connect(
   mapStateToProps,
   mapDispatchToProps,
-  mergeProps
+  mergeProps,
 ) (ChoreWheelList);
 
 export default VisibleList;

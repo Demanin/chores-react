@@ -1,6 +1,6 @@
-import Button from 'src/Components/Footer/Button';
+import Button from 'Components/Footer/Button';
 import { connect } from 'react-redux';
-import setVisibilityFilter from 'src/Actions/setVisibilityFilter';
+import setVisibilityFilter from 'Actions/setVisibilityFilter';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 const FilterButton = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Button);
 
 export default FilterButton;

@@ -42,9 +42,9 @@ class AddTurn extends Component
             onChange={this.handleChange}
           >
             <option key="-1" value="-1">Select a user</option>
-            {this.props.userList.map((user, index) =>
-              <option key={index} value={user.id}>{user.name}</option>
-            )}
+            {this.props.userList.map((user, index) => {
+              return (<option key={index} value={user.id}>{user.name}</option>);
+            })}
           </FormControl>
         </FormGroup>
       </div>
@@ -60,7 +60,7 @@ AddTurn.propTypes = {
     PropTypes.shape({
       id: PropTypes.number,
       name: PropTypes.string,
-    })
+    }),
   ).isRequired,
   id: PropTypes.number,
 };
